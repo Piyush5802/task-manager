@@ -5,8 +5,6 @@ const { sendEmail } = require('../utils/sendEmail');
 class emailScheduler{
 
   constructor() {
-    
-    // Cron scheduled for every minute to expire polls need to be expired
     this.job = cron.schedule('*/5 * * * *', this.sendReminder.bind(this));
     this.job.start();
   }
